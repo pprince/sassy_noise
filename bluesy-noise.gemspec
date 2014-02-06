@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   # Gem Bookkeeping
   s.rubygems_version = %q{1.6.2}
   s.add_dependency("compass")
+  s.add_dependency("rubystats")
   s.add_dependency("chunky_png")
   s.add_development_dependency("rspec", ">=2.0")
 end
