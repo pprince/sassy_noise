@@ -1,7 +1,7 @@
 require 'compass'
 require 'chunky_png'
 require 'base64'
-require 'rubystats/normal'
+require 'rubystats'
 
 require File.join(File.dirname(__FILE__), 'bluesy-noise', 'sass_extensions')
 
