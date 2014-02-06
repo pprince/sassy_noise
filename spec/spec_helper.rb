@@ -1,3 +1,3 @@
 require "compass"
 require "rspec"
-require "sassy_noise"
+require "bluesy-noise"

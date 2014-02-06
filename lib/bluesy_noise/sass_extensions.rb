@@ -6,12 +6,12 @@
 # -----------------------------------------------
 
 module Sass::Script::Functions
-  def background_noise(kwargs = {})
+  def gnoise(kwargs = {})
     opts = {}
     Sass::Util.map_hash({
+        "width"      => [1..512,        "px", :Number, Sass::Script::Number.new(100) ],
+        "height"     => [1..512,        "px", :Number, Sass::Script::Number.new(100) ],
         "sigma"      => [0..512,        "",   :Number, Sass::Script::Number.new(5) ],
-        "width"      => [1..512,        "px", :Number, Sass::Script::Number.new(200) ],
-        "height"     => [1..512,        "px", :Number, Sass::Script::Number.new(200) ],
       }) do |name, (range, units, type, default)|
       
       if val = kwargs.delete(name)
@@ -59,17 +59,8 @@ module Sass::Script::Functions
       end
     end
 
-#    for i in (0..(opts["intensity"].to_s.to_f * (opts["size"].to_i**2)))
-#       x = rand(opts["size"].to_i)
-#       y = rand(opts["size"].to_i)
-#       r = rand(255)
-#       a = rand(255 * opts["opacity"].to_s.to_f)
-#       color = opts["monochrome"] ? ChunkyPNG::Color.rgba(r, r, r, a) : ChunkyPNG::Color.rgba(r, rand(255), rand(255), a)
-#       image.set_pixel(x, y, color)
-#    end
-    
     data = Base64.encode64(image.to_blob).gsub("\n", "")
     Sass::Script::String.new("url('data:image/png;base64,#{data}')")
   end
-  declare :background_noise, [], :var_kwargs => true
+  declare :gnoise, [], :var_kwargs => true
 end
