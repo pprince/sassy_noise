@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
 
   # Gem Details
   s.name = "sassy_noise"
-  s.authors = ["Antti Salonen", "Vesa Vanska"]
+  s.authors = ["Paul Prince", "Antti Salonen", "Vesa Vanska"]
   s.summary = %q{a sass port of the noisy js plugin as a compass extension}
   s.description = %q{a sass port of the noisy js plugin as a compass extension that creates backgrond noise images as base64 data URIs}
   s.email = "salosen.antti@gmail.com"
@@ -23,5 +23,6 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.6.2}
   s.add_dependency("compass")
   s.add_dependency("chunky_png")
+  s.add_dependency("rubystats")
   s.add_development_dependency("rspec", ">=2.0")
 end
